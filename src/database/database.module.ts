@@ -3,8 +3,8 @@ import {DATABASE_CONNECTION} from "./database.connection";
 import {ConfigService} from "@nestjs/config";
 import {Pool} from "pg";
 import {drizzle} from "drizzle-orm/node-postgres";
-import * as userSchema from "../users/schema"
-import * as postsSchema from "../posts/schema"
+import * as userSchema from "./schemas/user.schema"
+import * as postsSchema from "./schemas/post.schema"
 
 @Module({
     imports: [],

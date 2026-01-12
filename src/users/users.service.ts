@@ -1,6 +1,6 @@
 import {Inject, Injectable} from '@nestjs/common';
 import {DATABASE_CONNECTION} from "../database/database.connection";
-import * as schema from './schema'
+import * as schema from '../database/schemas/user.schema'
 import {NodePgDatabase, NodePgTransaction} from "drizzle-orm/node-postgres";
 
 @Injectable()
@@ -9,7 +9,6 @@ export class UsersService {
     }
 
     async getUsers() {
-
         return this.db.query.usersTable.findMany({
             with: {posts: true}
         })
